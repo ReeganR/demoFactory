@@ -1,0 +1,293 @@
+
+
+//Root////////////////////////////////////
+*,*::before, *::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+$primayColor : #A1CD3A;
+$menuBg : #242424;
+$whiteBg : #fff;
+
+
+//Layout////////////////////////////////////////
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  position: relative;
+  width: 100%;
+  color: #fff !important;
+  background-color: #000; /* For browsers that do not support gradients */
+  background-image: linear-gradient(0deg, #000, #272727);
+
+}
+
+
+
+//bodyWrapper//////////////////////////////////////
+#bodyWrapper{
+    max-width: 958px;
+    & section{
+        transition: .7s all;
+    & img{
+        cursor: pointer;
+    }
+    }
+}
+
+//topMenu//////////////////////////////////////////
+
+.topMenu{
+    min-height: 33px;
+    & .active{
+        color: $primayColor;
+    }
+    & ul li:not(:last-child){
+        margin-right: 10px;
+    }
+    & ul li a{
+        color: #fff;
+    }
+    a:hover{
+        color: $primayColor;
+    }
+
+}
+
+//searchBox//////////////////////////////////////
+.main {
+    & .form-group{
+        max-width: 165px;
+    }
+    & input{
+        background-image: url(/assets/images/icon_search.png);
+        background-position: right;
+        object-fit: contain;
+        background-repeat: no-repeat;
+        background-color: #424242;
+        transition: .7s all;
+    }
+}
+
+//primaryMenu//////////////////////////////////////////
+.primaryMenu{
+    & ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+
+        &  li {
+            & a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 0px 21px;
+                text-decoration: none;
+                transition: .7s all;
+                font-weight: 600;
+              }
+              & a:hover:not(.active) {
+                background-color:  $primayColor;
+                color: #3A3B36;
+              }
+              & .active {
+                background-color: $primayColor;
+                color: #3A3B36;
+              }
+          }
+
+      }
+}
+
+//bannerContent////////////////////////////////////////
+.bannerContent{
+    background-color: $primayColor;
+    & .jobContent{
+        width: 200px;
+        color: #3A3B36;
+    }
+}
+
+//Ihr Aufgaben/Ihr Profil/////////////////////////////////
+.some-page-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+
+        &   .column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-basis: 100%;
+            flex: 1;
+            background-color:$whiteBg;
+            min-height: 400px;
+            color:  #3A3B36;
+          }
+  }
+
+
+//Unser Angebot///////////////////////////////////////
+.unserAngebot{
+    background-color: $whiteBg;
+    flex: 1;
+    color: #3A3B36;
+}
+.jetzt{
+    background-color: $whiteBg;
+    & .btn{
+        min-height: 45px;
+        width: 235px;
+        background-color: $primayColor;
+        border: none;
+        transition: .7s all;
+        &:hover{
+            background-color: #333333;
+        }
+    }
+    & p{
+        color: #3A3B36;
+    }
+}
+#unserAngebot .column{
+    width: 250px;
+}
+
+//Accordian////////////////////////////////
+#accordianPanel .column{
+    min-height: 0;
+}
+
+.accordion {
+    background-color: $whiteBg;
+    color: #444;
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: .7s all;
+    position: relative;
+    &:focus{
+        outline: none;
+    }
+  }
+
+
+  .accordion {
+    background-position: right;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-image: url(/assets/images/icon_arrow_down.png);
+    background-repeat: no-repeat;
+    background-position: right;
+  }
+
+  .accordion.active{
+    background-image: url(/assets/images/icon_arrow_up.png);
+    background-position: right;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-color: $whiteBg !important;
+  }
+
+  .panel, .panelTwo {
+    background-color: $whiteBg;
+    display: none;
+    overflow: hidden;
+    transition: .7s all;
+  }
+  .panel.active, .panelTwo.active {
+    display: block;
+  }
+
+
+//hrTag//////////////////////////////
+.hrTag{
+    height:2px;
+    border-width:0;
+    color:#fff;
+    background-color:$whiteBg
+}
+
+// Footer/////////////////////////////////////////
+.footer{
+    li{
+        padding-right: 15px;
+        & a{
+            color: #fff;
+        }
+    }
+}
+
+
+//breakPoints//////////////////////////////////////////
+// Tabs
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    #bodyWrapper{
+       padding: 0 5px;
+    }
+    .featureImage{
+        font-size: 1rem;
+    }
+    .some-page-wrapper {
+        flex-direction: column;
+    }
+    .column{
+        margin-top: 10px;
+    }
+    .bannerImg img{
+        height: 30%;
+    }
+    #unserAngebot > .d-flex{
+        flex-direction: column;
+        & .column{
+            width: 100%;
+        }
+    }
+    .main .form-group {
+        max-width: 145px;
+    }
+    .primaryMenu ul {
+        background-color: transparent;
+    }
+
+}
+//Medium Devices
+@media (min-width: 768px) {
+    .main {
+        & .form-group{
+            max-width: 212px;
+        }
+    }
+    .featureImage{
+        font-size: 1.625rem;
+    }
+    .jetzt{
+        margin-left: 10px;
+    }
+    .some-page-wrapper .column:nth-last-child(1){
+        margin-left: 10px;
+    }
+}
+// XL
+@media (min-width: 1200px) {
+
+}
+// XXL
+@media (min-width: 1400px) {
+
+}
